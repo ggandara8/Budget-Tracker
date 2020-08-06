@@ -137,7 +137,7 @@ function sendTransaction(isAdding) {
   .catch(err => {
     // fetch failed, so save in indexed db
     saveRecord(transaction);
-    
+
     // clear form
     nameEl.value = "";
     amountEl.value = "";
@@ -152,23 +152,4 @@ document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
 
-// indexedDB
 
-// const request = window.indexedDB.open("Budget-Data", 1);
-
-//   // Create an object store inside the onupgradeneeded method.
-//   request.onupgradeneeded = ({ target }) => {
-//     const db = target.result;
-//     const objectStore = db.createObjectStore("Budget-Data");
-//   };
-
-//   function saveRecord(transaction) {
-//     // create a transaction on the pending db with readwrite access
-//     const record = db.transaction(["Budget-Data"], "readwrite");
-  
-//     // access your pending object store
-//     const store = record.objectStore("Budget-Data");
-  
-//     // add record to your store with add method.
-//     store.add(transaction);
-//   }
